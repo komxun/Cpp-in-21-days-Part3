@@ -28,3 +28,32 @@ pAge = &howOld;                   // assigns the address of howOld to the pointe
 unsigned short int howOld2 = 50;       // make a variable
 unsigned short int * pAge2 = &howOld2; // make pointer to howOld2
 ```
+# Getting the Value from a Variable
+Accessing the value stored in a variable by using a pointer is called **indirection** because you are indirectly accessing the variable by means of the pointer
+- With a pointer, the type doesn't need to tell the compiler how much memory is needed because all pointers are the same size!
+- (*) is also called the _dereference_ operator
+- When a pointer is dereferenced, the value at the address stored by the pointer is retrieved
+
+# Different Uses of the Asterisk (*)
+1. Pointer declaration
+2. Dereference operator - (*) in front of the pointer variable means "the value stored at"
+
+```cpp
+// make a pointer to an unsigned short
+unsigned short * pAge = 0;
+
+// dereference
+*pAge = 5;   // assign 5 to the value at pAge
+
+```
+
+# Pointers VS Address VS Variables
+``` cpp
+int x = 5;
+int * pPointer = &x;
+```
+- x is declared to be an integer variable intialized with the value of 5
+- pPointer is declared to be a pointer to an integer; it is initialized with the address of x
+- The value at the address that pPointer holds is 5
+
+# Manipulating Data by Using Pointers

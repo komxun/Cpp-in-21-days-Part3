@@ -57,3 +57,21 @@ int * pPointer = &x;
 - The value at the address that pPointer holds is 5
 
 # Manipulating Data by Using Pointers
+- After the pointer is assigned the address, you can use that pointer to access the data in the variable being pointed to
+
+https://github.com/komxun/Cpp-in-21-days-Part3/blob/9e6b63ca2538a7ada14fd281481590a06f77eb4a/Day%208%20-%20Pointers/using_Pointers.cpp#L4-L34
+```
+// output
+myAge: 5   
+*pAge: 5
+
+Setting *pAge = 7...
+*pAge: 7
+myAge: 7
+
+Setting myAge = 9...
+myAge: 9
+*pAge: 9
+```
+- When the value pointed at the address is reassigned  the value of the variable also changes
+- When the value of the variable changes, the value obtained from pointing the address also changes (dereferencing)

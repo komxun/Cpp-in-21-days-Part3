@@ -1,5 +1,5 @@
 // Listing 8.1 - Demonstrating the Address-of Operator (P.223)
-// and addresses of local variables
+// and addresses of (&) local variables
 
 # include <iostream>
 

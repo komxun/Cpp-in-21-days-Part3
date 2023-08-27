@@ -17,7 +17,7 @@ int *pAge = 0;
 This declares pAge to be a pointer to an int and pAge is holding the address of an integer
 - A pointer whose value is zero is called a _null pointer_
 - All pointers, when they are created, should be initialized to something.
-- A pointer that is not initialized is called a _wild pointer_ be cause you have no idea what it is pointing to (very dangerous!)
+- A pointer that is not initialized is called a _wild pointer_ because you have no idea what it is pointing to (very dangerous!)
 
 ``` cpp
 unsigned short int howOld = 50;   // making a variable
@@ -75,3 +75,32 @@ myAge: 9
 ```
 - When the value pointed at the address is reassigned  the value of the variable also changes
 - When the value of the variable changes, the value obtained from pointing the address also changes (dereferencing)
+
+# Free Store (Heap)
+Free store is the remaining memory apart from Stack, Code, Global namespace, and Registers memories.
+- The free store is NOT cleaned until your program ends !
+- If you neglect to free the memory allocated on free store, it can build up over time and cause the system to crash
+
+## Allocating space with `new`
+- You allocate memory on the free store by using `new`
+``` cpp
+unsigned short int *pPointer;
+pPointer = new unsigned short int;
+
+// In one line
+unsigned short int *pPointer = new unsigned short int;
+// pPointer now points to an unsigned short int on the free store
+```
+## Claiming memory back with `delete`
+- You must free the allocated memory back to the system when you are finished with it
+- `delete` returns the memory to the free store
+- If a pointer variable is pointing to memory on the free store and the pointer goes out of
+scope, you can no longer access that memory. This is called **memory leak**
+- For every time in your program that you call `new`, there should be a call to `delete` !
+
+# The class member access operator (`->`) 
+
+# `this` Pointers
+
+# `const` Pointers
+

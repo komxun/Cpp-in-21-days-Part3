@@ -77,6 +77,8 @@ myAge: 9
 - When the value of the variable changes, the value obtained from pointing the address also changes (dereferencing)
 
 # Free Store (Heap)
+![image](https://github.com/komxun/Cpp-in-21-days-Part3/assets/133139057/683ac868-8ba6-4399-bb5b-edbf6514d5e3)
+
 Free store is the remaining memory apart from Stack, Code, Global namespace, and Registers memories.
 - The free store is NOT cleaned until your program ends !
 - If you neglect to free the memory allocated on free store, it can build up over time and cause the system to crash

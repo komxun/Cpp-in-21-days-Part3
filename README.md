@@ -103,4 +103,70 @@ scope, you can no longer access that memory. This is called **memory leak**
 # `this` Pointers
 
 # `const` Pointers
+# Operator Overloading
+The built-in operators, e.g. + - / * ++, can be added to C++ classes as well 
+## Making an operator with Function
+This method works, but it is cumbersome to use!
+```cpp
+// Ex: Defining an increment operator for a class
+class Counter
+{
+  public:
+    void Increment() {++itsVal;}
+  private:
+    int itsVal;
+};
+```
+## Overloading Prefix Operator
+Prefix operators can be overloaded by declaring functions with the form:
+`returnType operator op ()`
+```cpp
+// Ex: Overloading operator++
+class Counter
+{
+  public:
+    void operator++ () {++itsVal;}
+  private:
+    int itsVal;
+};
+```
+Example:
+https://github.com/komxun/Cpp-in-21-days-Part3/blob/e525830d0dbd75382d50a078c887a70dadf1f4ac/Day%2010%20-Advanced%20Functions/Overloading_operator%2B%2B.cpp#L5-L31
 
+Here, the ++ operator returns nothing (void). This program increments the value and and only update object `i`.
+Since it returns void, you can't assign this incremented value to a new object
+
+For example:
+```cpp
+Counter a = ++i;    // Not happening since the defined ++ operator does not return a Counter object!
+```
+### Returning Types in Overloaded Operator Functions
+#### Method 1a: Create a temporary object - use the class's method to update the value and return it
+To return some type from the overloaded operator, one approach is to create a **temporary object**, use the class method, and then return that.
+
+https://github.com/komxun/Cpp-in-21-days-Part3/blob/e525830d0dbd75382d50a078c887a70dadf1f4ac/Day%2010%20-Advanced%20Functions/Return_temporary_Object.cpp#L5-L28
+
+#### Method 1b: Create a temporary object - use a **custom constructor** to initialize the updated value and return it
+From the previous method, a custom constructor can be used to initialize the value when the temporary is created.
+https://github.com/komxun/Cpp-in-21-days-Part3/blob/e525830d0dbd75382d50a078c887a70dadf1f4ac/Day%2010%20-Advanced%20Functions/Returning_Nameless_temporary_object.cpp#L5-L30
+
+#### Method 2: Use the `this` pointer
+- This method returns the dereferenced pointer pointed to the current object which is incremented
+- The value returned is a Reference of an object to avoid the creation of an extra temporary object
+- It is constant because the value should not be changed
+
+https://github.com/komxun/Cpp-in-21-days-Part3/blob/e525830d0dbd75382d50a078c887a70dadf1f4ac/Day%2010%20-Advanced%20Functions/this_pointer.cpp#L4-L24
+
+## Overloading Postfix Operator
+``` cpp
+// Postfix example
+a = x++;
+// ^This is equivalent to
+a2 = x2;
+x2 = x2 + 1;
+```
+# Overloading Binary Mathematical Operators
+- Prefix and postfix are unary operators: it operates on only 1 object
+- Mathematical operators are binary: they take 2 objects (e.g. + - * /)
+
+## Overloading Binary Operators with Function

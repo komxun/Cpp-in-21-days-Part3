@@ -271,4 +271,45 @@ https://github.com/komxun/Cpp-in-21-days-Part3/blob/2d9b4424651160e16e72660483d6
 - (better method)
 https://github.com/komxun/Cpp-in-21-days-Part3/blob/2d9b4424651160e16e72660483d612cfadea965b/Day%2010%20-Advanced%20Functions/Overloading_Addition_operator.cpp#L5-L39
 
+# Inheritance
+- A class that adds new functionality to an existing class is said to derive from that original (base) class
+- Derivation syntax: class _derivedClass_ : _accessType basClass_
+``` cpp
+class Dog : public Mammal
+```
+
+## Private VS Protected
+- `private` : members are not available outside of the existing class
+- `protected` : members are visible to this class and to classes that derive from this class
+
+https://github.com/komxun/Cpp-in-21-days-Part3/blob/4e542d1a6981e007772ce88be0b114da4b1a271f/Day%2012%20-%20Inhertitance/using_protected.cpp#L8-L52
+
+## Inheritance with Constructors and Destructors
+- When `Fido` is created, its base constructor (`Mammal`) is called first, then `Dog` constructor is called
+- When `Fido` is destroyed, the `Dog` destructor is called and then the `Mammal` destructor is called
+
+## Passing Arguments to Base Constructors
+- You can initialize values in a base constructor by defining the overloaded constructors
+- You CANNOT assign to the base class variable in the initialization phase
+
+https://github.com/komxun/Cpp-in-21-days-Part3/blob/4e542d1a6981e007772ce88be0b114da4b1a271f/Day%2012%20-%20Inhertitance/Overloading_Constructors_in_Derived_Classes.cpp#L7-L116
+
+## Overriding Base Class Functions
+- Overriding a function means changing the implementation of a base class function in a derived class (i.e. changing the definition of the base method in the derived class)
+
+https://github.com/komxun/Cpp-in-21-days-Part3/blob/4e542d1a6981e007772ce88be0b114da4b1a271f/Day%2012%20-%20Inhertitance/Overriding_a_Base_Class_Method_in_Derived_Class.cpp#L7-L38
+
+## Hiding Bas Class Method
+- If the base class has an **overloaded** method, and the derived class **overrides** that method, the derived method HIDES all the base methods with that name (i.e. the method is no longer overloaded!!)
+- If you want the overridden method to be overloaded, you have to override ALL of the overloaded method variations!
+
+https://github.com/komxun/Cpp-in-21-days-Part3/blob/4e542d1a6981e007772ce88be0b114da4b1a271f/Day%2012%20-%20Inhertitance/Hiding_Methods.cpp#L5-L34
+
+# Virtual Methods
+Base Class |---->> Derived Class  ?
+- the pointer is pointing to the derived class on a heap, but output the base class?
+```cpp
+Mammal *pMammal = new Dog;
+```
+This creates a new `Dog` object on a heap and returns a pointer to that object, which is assigned to a pointer to `Mammal`
 

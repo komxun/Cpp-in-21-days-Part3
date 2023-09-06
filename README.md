@@ -1,5 +1,8 @@
 # Cpp-in-21-days-Part3
+My note for learning C++ in 21 days (Day 8 - 12)
 
+Reference: Liberty, J., & Jones, B. L. (2004). _Sams teach yourself C++ in 21 days_. Sams Publishing.
+> Created by Komsun Tamanakijprasart
 
 Table of contents
 =================

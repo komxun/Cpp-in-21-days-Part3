@@ -101,10 +101,49 @@ scope, you can no longer access that memory. This is called **memory leak**
 - For every time in your program that you call `new`, there should be a call to `delete` !
 
 # The class member access operator (`->`) 
+- The indirection operator (`->`) is applied to **pointer** to access the member data and functions.
+https://github.com/komxun/Cpp-in-21-days-Part3/blob/31fdff9bff2d997efa98f92dc3f1ec6f98a7467d/Day%208%20-%20Pointers/Accessing_Member_Data_of_Object_on_FreeStore.cpp#L17-L26
 
 # `this` Pointers
+- Every class member has the `this` pointer
+- `this` pointer points to "this" individual **object**
+- The compiler already takes care of creating and deleting the `this` pointer
+https://github.com/komxun/Cpp-in-21-days-Part3/blob/31fdff9bff2d997efa98f92dc3f1ec6f98a7467d/Day%208%20-%20Pointers/Using_the_this_Pointer.cpp#L3-L15
 
 # `const` Pointers
+```cpp
+const int * pOne;  // a pointer to a constant integer
+int * const pTwo;  // a constant pointer to an integer
+const int * const pThree  // a constant pointer to a constant integer 
+```
+- pOne : the value that is pointed to can't be changed
+- pTwo : pTwo pointer can't point to anything else, but the integer can be changed
+- pThree : the value that is pointed to can't be changed, and pThree pointer can't point to anything else
+
+# References
+- Reference MUST always be initialized to something when created
+- References act as a synonym for their target
+- Anything you do to the references is really done to the target
+- Reference variables cannot be reassigned -- doing so will update the reference and its target's value
+``` cpp
+int x;
+int &rSomeRef = x;
+
+Cat &rCatRef = Cat; // WRONG !!
+```
+## Returning Multiple Values
+- Functions can only return one value
+- One way to solve this problem is to passing by reference
+
+https://github.com/komxun/Cpp-in-21-days-Part3/blob/31fdff9bff2d997efa98f92dc3f1ec6f98a7467d/Day%209%20-%20References/Passing_by_References.cpp#L2-L27
+
+
+## Passing a `const` pointer
+- Although passing a pointer to function is more efficient, it is dangerous - it exposes the original object to change.
+- The solution is to pass a pointer to a `const` object
+https://github.com/komxun/Cpp-in-21-days-Part3/blob/31fdff9bff2d997efa98f92dc3f1ec6f98a7467d/Day%209%20-%20References/Passing_Pointer_to_Constant_Object.cpp#L56-L62
+
+
 # Operator Overloading
 The built-in operators, e.g. + - / * ++, can be added to C++ classes as well 
 ## Making an operator with Function

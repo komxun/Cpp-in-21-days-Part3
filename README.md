@@ -11,7 +11,7 @@ Table of contents
   * [Free Store (Heap)](#free-store-heap)
       * [`new` - allocating memory](#allocating-space-with-new)
       * [`delete`- claiming memory back](#the-class-member-access-operator--)
-  * [`->` operator](#the-class-member-access-operator--)
+  * [`->` - class member access operator](#the-class-member-access-operator--)
   * [`this` pointer](#this-pointers)
   * [`const` pointer](#const-pointers)
   * [`&` References](#references)

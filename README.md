@@ -144,6 +144,27 @@ https://github.com/komxun/Cpp-in-21-days-Part3/blob/31fdff9bff2d997efa98f92dc3f1
 https://github.com/komxun/Cpp-in-21-days-Part3/blob/31fdff9bff2d997efa98f92dc3f1ec6f98a7467d/Day%209%20-%20References/Passing_Pointer_to_Constant_Object.cpp#L56-L62
 
 
+# The Copy Constructor
+- All copy constructors take 1 parameter: a reference to an object of the same class
+```cpp
+Cat(const Cat & theCat);
+```
+Default copy constructor = shallow copy
+
+**Shallow copy** : pointers in both objects end up pointing to the same memory! -> problem!
+If the original object's destructor frees this memory and the new object is still pointing to the memory, a stray pointer has been created!
+
+**Deep copy** : the values allocated on the heap is copied to a newly allocated memory -> custom create the copy constructors
+
+![image](https://github.com/komxun/Cpp-in-21-days-Part3/assets/133139057/9f1fcf52-d8aa-47ae-8bd1-d66656f5a6d8)
+
+
+https://github.com/komxun/Cpp-in-21-days-Part3/blob/2d9b4424651160e16e72660483d612cfadea965b/Day%2010%20-Advanced%20Functions/Copy_Constructors.cpp#L28-L44
+
+- Any `Cat` object can access private member variables of any other `Cat` object; however, it is good programming practice to use public accessor methods when possible!
+
+
+
 # Operator Overloading
 The built-in operators, e.g. + - / * ++, can be added to C++ classes as well 
 ## Making an operator with Function
@@ -211,3 +232,11 @@ x2 = x2 + 1;
 - Mathematical operators are binary: they take 2 objects (e.g. + - * /)
 
 ## Overloading Binary Operators with Function
+- (unnatural method)
+https://github.com/komxun/Cpp-in-21-days-Part3/blob/2d9b4424651160e16e72660483d612cfadea965b/Day%2010%20-Advanced%20Functions/Add_function.cpp#L5-L39
+
+## Overloading operator+
+- (better method)
+https://github.com/komxun/Cpp-in-21-days-Part3/blob/2d9b4424651160e16e72660483d612cfadea965b/Day%2010%20-Advanced%20Functions/Overloading_Addition_operator.cpp#L5-L39
+
+

@@ -13,7 +13,7 @@ Table of contents
       * [`delete`](#the-class-member-access-operator--)
   * [`->` operator](#the-class-member-access-operator--)
   * [`this` pointer](#this-pointers)
-  * ['const' pointer](#const-pointers)
+  * [`const` pointer](#const-pointers)
   * [`&` References](#references)
       * [Returning Multiple Values](#returning-multiple-values)
       * [Passing a `const` pointer](#passing-a-const-pointer)

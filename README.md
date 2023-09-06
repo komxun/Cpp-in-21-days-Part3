@@ -154,8 +154,12 @@ const int * const pThree  // a constant pointer to a constant integer
 - Anything you do to the references is really done to the target
 - Reference variables cannot be reassigned -- doing so will update the reference and its target's value
 ``` cpp
-int x;
-int &rSomeRef = x;
+int x, y;
+int &rX = x;
+int &rY = y;
+
+cout << x + y << endl;
+cout << rX + rY << endl;  // same
 
 Cat &rCatRef = Cat; // WRONG !!
 ```

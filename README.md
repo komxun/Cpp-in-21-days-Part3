@@ -22,6 +22,13 @@ Table of contents
       * [Passing a `const` pointer](#passing-a-const-pointer)
   * [The Copy Constructor](#the-copy-constructor)
   * [Operator Overloading](#operator-overloading)
+  * [Inheritance](#inheritance)
+      * [`private` VS `protected`](#private-vs-protected)
+      * [Inheritance with Constructors and Destructors](#inheritance-with-constructors-and-destructors)
+      * [Passing Arguments to Base Constructors](#passing-arguments-to-base-constructors)
+      * [Overriding Base Class Functions](#overriding-base-class-functions)
+      * [Hiding Base Class Method](#hiding-base-class-method)
+  * [Virtual Methods](#virtual-methods) 
 <!--te-->
 
 
@@ -299,7 +306,7 @@ https://github.com/komxun/Cpp-in-21-days-Part3/blob/4e542d1a6981e007772ce88be0b1
 
 https://github.com/komxun/Cpp-in-21-days-Part3/blob/4e542d1a6981e007772ce88be0b114da4b1a271f/Day%2012%20-%20Inhertitance/Overriding_a_Base_Class_Method_in_Derived_Class.cpp#L7-L38
 
-## Hiding Bas Class Method
+## Hiding Base Class Method
 - If the base class has an **overloaded** method, and the derived class **overrides** that method, the derived method HIDES all the base methods with that name (i.e. the method is no longer overloaded!!)
 - If you want the overridden method to be overloaded, you have to override ALL of the overloaded method variations!
 
